@@ -1,6 +1,12 @@
 ## Window Sensor documentation
 
+Monitoring of windows in the boat house. Sensors send an event with the window is open or closed. This event is sent over ZWave to the fog device and from there to SIOT over mqtt.
 
+**Fog Device**
+![Fog Device](fogdevice.jpeg)
+
+**Sensor**
+![Strip](strip.jpeg)
 
 ### SIOT Connection string and json definition for APP Team
 ```
@@ -52,10 +58,32 @@ npm start
 22 = open
 23 = closed
 
-### Todo
+### Todo Node Red
 Node Red flow zwave to mqtt.
 
 22 = true
 23 = closed
 
 And set window ID
+
+
+### Strips magnet sequences
+**Quickstart**
+
+1. Start the add mode on the Z-Wave controller. See the controller’s manual. 
+2. Remove both magnets from Strips. Strips blinks twice to confirm the command and successful addition. 
+3. A long LED blink indicates that the add process was successful 
+4. The Z-Wave controller application should now allow you to monitor your Strips sensor status. 
+5. Move the squared magnet as shown in the picture . Check that the Z-Wave system indicates the status correctly
+
+**Add Manual**
+
+1. Set the controller to add mode (See your controller’s manual).
+2. Place the round magnet at the rounded edge of Strips. When the LED blinks, move the magnet away. Repeat 3 times in total within 10 seconds.
+3. A long LED blink indicates that the add process was successful.
+
+**Reset**
+Set the Node into the exclusion mode
+
+1. Touch the supplied magnet against the rounded and wait for the LED to blink
+2. Move the magnet towards the center two (2) times On the last pass, leave the magnet on rounded edge for ten (10) seconds
