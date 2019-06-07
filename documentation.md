@@ -10,8 +10,6 @@ Monitoring of windows in the boat house. Sensors send an event with the window i
 
 ### SIOT Connection string and json definition for APP Team
 ```
-labenv
-NexHome$1
 https://siot.net:19025
 
 mqtt://siot.net 1883
